@@ -14,9 +14,8 @@ class MyCollection:
 
     def __str__(self):
         string = self.head.data
-        currentNext = self.head.next
+        current_next = self.head.next
         count = 0
-        while currentNext is not None and count < self.size:
-            string.append(currentNext.data)
-            
-
+        while current_next is not None and count < self.size:
+            current_next = current_next.next
+            string.append(",", current_next.data)
