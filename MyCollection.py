@@ -16,6 +16,14 @@ class MyCollection:
             new_node.next = self.head
             self.head = new_node
 
+    def addEnd(self, item):
+
+
+    def removeIndex(self, index):
+        return
+
+    def removeObject(self, object):
+
     def __str__(self):
         string = str(self.head.data)
         current_next = self.head.next
