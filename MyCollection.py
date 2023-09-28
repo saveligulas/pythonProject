@@ -13,9 +13,10 @@ class MyCollection:
         self.head.next = placeholder_node
 
     def __str__(self):
-        string = self.head.data
+        string = str(self.head.data)
         current_next = self.head.next
         count = 0
         while current_next is not None and count < self.size:
+            string += f", {current_next.data}"
             current_next = current_next.next
-            string.append(",", current_next.data)
+            count += 1
