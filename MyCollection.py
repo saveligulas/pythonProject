@@ -17,6 +17,11 @@ class MyCollection:
             self.head = new_node
 
     def addEnd(self, item):
+        data = self.head
+        self.head = Node(item)
+
+        for i in range(self.size):
+
 
 
     def removeIndex(self, index):
