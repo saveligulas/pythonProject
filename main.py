@@ -1,6 +1,7 @@
 from MyCollection import MyCollection
 
 myList = MyCollection("placeholder")
-myList.add(input("What do you want to add to your list?"))
+for i in range(10):
+    myList.add(i)
 print(myList.__str__())
 
