@@ -2,15 +2,19 @@ from Node import Node
 
 
 class MyCollection:
-    def __init__(self, item):
+    def __init__(self):
         self.size = 1
-        self.head = Node(item)
+        self.head = None
 
     def add(self, item):
         self.size += 1
-        placeholder_node = self.head
-        self.head = Node(item)
-        self.head.next = placeholder_node
+        new_node = Node(item)
+
+        if self.head is None:
+            self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
 
     def __str__(self):
         string = str(self.head.data)
@@ -20,3 +24,4 @@ class MyCollection:
             string += f", {current_next.data}"
             current_next = current_next.next
             count += 1
+        return string
