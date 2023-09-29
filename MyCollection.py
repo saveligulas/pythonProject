@@ -43,9 +43,13 @@ class MyCollection:
         current = self.head
         count = 0
         while count < index-1:
+            count += 1
             current = current.next
+
         removed_item = current.next.data
-        if current is not None and current.next is not None and current.next.next is not None:
+        self.size -= 1
+
+        if current.next.next is not None:
             current.next = current.next.next
             print(message, removed_item)
         else:
