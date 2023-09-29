@@ -16,18 +16,36 @@ class MyCollection:
             new_node.next = self.head
             self.head = new_node
 
-    def addEnd(self, item):
-        data = self.head
-        self.head = Node(item)
+    def add_end(self, item):
+        self.size += 1
+        new_node = Node(item)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next is not None:
+                current = current.next
+            current.next = new_node
 
-        for i in range(self.size):
+    def remove_index(self, index):
+        message = "Successfully removed item: "
+        if self.size == 0:
+            removed_item = self.head.data
+            self.head = None
+            self.size -= 1
+            print("Succ")
+            return
 
-
-
-    def removeIndex(self, index):
-        return
-
-    def removeObject(self, object):
+        current = self.head
+        count = 0
+        while count < index-1:
+            current = current.next
+        if current is not None and current.next is not None and current.next.next is not None:
+            current.next = current.next.next
+            print("Successfully removed encapsuled item", current.data)
+        else:
+            current.next = None
+            print("Successfully removed last item", current.data)
 
     def __str__(self):
         string = str(self.head.data)
