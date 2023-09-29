@@ -33,19 +33,24 @@ class MyCollection:
             removed_item = self.head.data
             self.head = None
             self.size -= 1
-            print("Succ")
+            print(message, removed_item)
+            return
+
+        if 0 > index > self.size:
+            print("Index is out of bounds")
             return
 
         current = self.head
         count = 0
         while count < index-1:
             current = current.next
+        removed_item = current.next.data
         if current is not None and current.next is not None and current.next.next is not None:
             current.next = current.next.next
-            print("Successfully removed encapsuled item", current.data)
+            print(message, removed_item)
         else:
             current.next = None
-            print("Successfully removed last item", current.data)
+            print(message, removed_item)
 
     def __str__(self):
         string = str(self.head.data)
