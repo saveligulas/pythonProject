@@ -28,7 +28,7 @@ class MyCollection:
             current.next = new_node
 
     def remove_index(self, index):
-        message = "Successfully removed item: "
+        message = "Successfully removed item:"
         if self.size == 0:
             removed_item = self.head.data
             self.head = None
@@ -55,6 +55,17 @@ class MyCollection:
         else:
             current.next = None
             print(message, removed_item)
+
+    def remove_object(self, object):
+        current = self.head
+        count = 0
+        while current is not None:
+            if current.data == object:
+                self.remove_index(count)
+                print("Successfully removed item:", current.data)
+                break
+            current = current.next
+            count += 1
 
     def __str__(self):
         string = str(self.head.data)
